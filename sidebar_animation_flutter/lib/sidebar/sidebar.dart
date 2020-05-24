@@ -76,11 +76,11 @@ class _SideBarState extends State<SideBar> with SingleTickerProviderStateMixin<S
                       ),
                       ListTile(
                         title: Text(
-                          "Prateek",
+                          "Tanish",
                           style: TextStyle(color: Colors.white, fontSize: 30, fontWeight: FontWeight.w800),
                         ),
                         subtitle: Text(
-                          "www.techieblossom.com",
+                          "www.infocrumbers.blogspot.com",
                           style: TextStyle(
                             color: Color(0xFF1BB5FD),
                             fontSize: 18,
@@ -117,9 +117,10 @@ class _SideBarState extends State<SideBar> with SingleTickerProviderStateMixin<S
                           BlocProvider.of<NavigationBloc>(context).add(NavigationEvents.MyAccountClickedEvent);
                         },
                       ),
+//TODO:Change Titles 
                       MenuItem(
                         icon: Icons.shopping_basket,
-                        title: "My Orders",
+                        title: "Todo List",//My Orders
                         onTap: () {
                           onIconPressed();
                           BlocProvider.of<NavigationBloc>(context).add(NavigationEvents.MyOrdersClickedEvent);
@@ -127,7 +128,7 @@ class _SideBarState extends State<SideBar> with SingleTickerProviderStateMixin<S
                       ),
                       MenuItem(
                         icon: Icons.card_giftcard,
-                        title: "Wishlist",
+                        title: "Visit Website",//Wishlist
                       ),
                       Divider(
                         height: 64,
