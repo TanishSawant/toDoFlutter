@@ -26,3 +26,9 @@ Future initiate() async {
 //void main(List<String> arguments) async {
 //  print(await hacker_news_scraper.initiate());
 //}
+
+
+//dependencies:
+//  html: ^0.13.3+3
+//  http: ^0.12.0
+
