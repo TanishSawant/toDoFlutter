@@ -1,0 +1,28 @@
+// lib/hacker_news_scraper.dart
+import 'dart:convert';
+import 'package:http/http.dart';
+import 'package:html/parser.dart';
+import 'package:html/dom.dart';
+Future initiate() async {
+  // Make API call to Hackernews homepage
+  var client = Client();
+  Response response = await client.get('https://news.ycombinator.com');
+  // Use html parser
+  var document = parse(response.body);
+  List<Element> links = document.querySelectorAll('td.title > a.storylink');
+  List<Map<String, dynamic>> linkMap = [];
+  for (var link in links) {
+    linkMap.add({
+      'title': link.text,
+      'href': link.attributes['href'],
+    });
+  }
+  return json.encode(linkMap);
+}
+
+
+//ADD FOLLOWING TO MAIN.DART
+//import 'package:hacker_news_scraper/hacker_news_scraper.dart' as hacker_news_scraper;
+//void main(List<String> arguments) async {
+//  print(await hacker_news_scraper.initiate());
+//}
